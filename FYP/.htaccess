@@ -1,0 +1,14 @@
+#Error Handling
+ErrorDocument 404 /404.html
+
+#Compulsary
+Options +FollowSymLinks
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#Index
+DirectoryIndex index.html
+
+RewriteRule ^([a-z0-9]+).html$ $1.html [QSA,L,NC]
